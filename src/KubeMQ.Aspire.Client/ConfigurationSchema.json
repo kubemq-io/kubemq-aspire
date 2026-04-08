@@ -1,0 +1,76 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "Aspire": {
+      "type": "object",
+      "properties": {
+        "KubeMQ": {
+          "type": "object",
+          "properties": {
+            "Client": {
+              "type": "object",
+              "description": "KubeMQ client integration settings for .NET Aspire. Top-level properties apply to the default client. Named subsections (e.g., Client:orders) configure keyed clients.",
+              "properties": {
+                "ConnectionString": { "type": "string", "description": "The KubeMQ gRPC connection string in host:port format." },
+                "DisableHealthChecks": { "type": "boolean", "default": false },
+                "DisableTracing": { "type": "boolean", "default": false },
+                "DisableMetrics": { "type": "boolean", "default": false },
+                "HealthCheckTimeout": { "type": "string", "format": "duration", "default": "00:00:05" },
+                "AuthToken": { "type": ["string", "null"] },
+                "ClientId": { "type": ["string", "null"] },
+                "DefaultTimeout": { "type": ["string", "null"], "format": "duration" },
+                "ConnectionTimeout": { "type": ["string", "null"], "format": "duration" },
+                "UseTls": { "type": "boolean", "default": false, "description": "Enable TLS for gRPC connections. Default: false (plain HTTP for dev containers)." },
+                "TlsCertFile": { "type": ["string", "null"], "description": "Path to client TLS certificate file (PEM)." },
+                "TlsKeyFile": { "type": ["string", "null"], "description": "Path to client TLS private key file (PEM)." },
+                "TlsCaFile": { "type": ["string", "null"], "description": "Path to CA certificate file (PEM)." },
+                "TlsServerNameOverride": { "type": ["string", "null"], "description": "Server name override for TLS verification." },
+                "TlsInsecureSkipVerify": { "type": "boolean", "default": false, "description": "Skip TLS certificate verification (dev only)." },
+                "GrpcChannelCount": { "type": ["integer", "null"], "minimum": 1, "maximum": 16, "description": "Number of gRPC channels to pool. SDK default: 5." },
+                "MaxSendSize": { "type": ["integer", "null"], "minimum": 1, "description": "Max gRPC send message size in bytes. SDK default: 104857600 (100 MB)." },
+                "MaxReceiveSize": { "type": ["integer", "null"], "minimum": 1, "description": "Max gRPC receive message size in bytes. SDK default: 104857600 (100 MB)." },
+                "WaitForReady": { "type": ["boolean", "null"], "description": "Block operations until connection is ready. SDK default: true." },
+                "KeepalivePingInterval": { "type": ["string", "null"], "format": "duration", "description": "Keepalive ping interval. SDK default: 00:00:10." },
+                "KeepalivePingTimeout": { "type": ["string", "null"], "format": "duration", "description": "Keepalive ping ACK timeout. SDK default: 00:00:05." },
+                "ReconnectEnabled": { "type": ["boolean", "null"], "description": "Enable auto-reconnection. SDK default: true." },
+                "ReconnectMaxAttempts": { "type": ["integer", "null"], "minimum": 0, "description": "Max reconnect attempts (0=unlimited). SDK default: 0." },
+                "ReconnectTimeout": { "type": ["string", "null"], "format": "duration", "description": "Timeout for reconnect wait-for-ready. SDK default: 00:01:00." }
+              },
+              "additionalProperties": {
+                "type": "object",
+                "description": "Keyed client settings. Section name matches the keyed service name.",
+                "properties": {
+                  "ConnectionString": { "type": "string" },
+                  "DisableHealthChecks": { "type": "boolean", "default": false },
+                  "DisableTracing": { "type": "boolean", "default": false },
+                  "DisableMetrics": { "type": "boolean", "default": false },
+                  "HealthCheckTimeout": { "type": "string", "format": "duration", "default": "00:00:05" },
+                  "AuthToken": { "type": ["string", "null"] },
+                  "ClientId": { "type": ["string", "null"] },
+                  "DefaultTimeout": { "type": ["string", "null"], "format": "duration" },
+                  "ConnectionTimeout": { "type": ["string", "null"], "format": "duration" },
+                  "UseTls": { "type": "boolean", "default": false },
+                  "TlsCertFile": { "type": ["string", "null"], "description": "Path to client TLS certificate file (PEM)." },
+                  "TlsKeyFile": { "type": ["string", "null"], "description": "Path to client TLS private key file (PEM)." },
+                  "TlsCaFile": { "type": ["string", "null"], "description": "Path to CA certificate file (PEM)." },
+                  "TlsServerNameOverride": { "type": ["string", "null"], "description": "Server name override for TLS verification." },
+                  "TlsInsecureSkipVerify": { "type": "boolean", "default": false },
+                  "GrpcChannelCount": { "type": ["integer", "null"], "minimum": 1, "maximum": 16 },
+                  "MaxSendSize": { "type": ["integer", "null"], "minimum": 1 },
+                  "MaxReceiveSize": { "type": ["integer", "null"], "minimum": 1 },
+                  "WaitForReady": { "type": ["boolean", "null"] },
+                  "KeepalivePingInterval": { "type": ["string", "null"], "format": "duration" },
+                  "KeepalivePingTimeout": { "type": ["string", "null"], "format": "duration" },
+                  "ReconnectEnabled": { "type": ["boolean", "null"] },
+                  "ReconnectMaxAttempts": { "type": ["integer", "null"], "minimum": 0 },
+                  "ReconnectTimeout": { "type": ["string", "null"], "format": "duration" }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

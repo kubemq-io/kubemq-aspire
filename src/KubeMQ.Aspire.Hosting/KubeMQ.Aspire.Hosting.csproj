@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <PackageId>KubeMQ.Aspire.Hosting</PackageId>
+    <Description>KubeMQ hosting integration for .NET Aspire. Provides AddKubeMQ() to provision KubeMQ containers in the Aspire AppHost.</Description>
+    <PackageTags>aspire;integration;hosting;kubemq;messaging</PackageTags>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Aspire.Hosting" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="../../README.md" Pack="true" PackagePath="/" />
+  </ItemGroup>
+</Project>

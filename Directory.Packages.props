@@ -1,0 +1,27 @@
+<Project>
+  <PropertyGroup>
+    <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- Hosting -->
+    <PackageVersion Include="Aspire.Hosting" Version="9.0.0" />
+    <!-- Client -->
+    <PackageVersion Include="KubeMQ.SDK.CSharp" Version="3.0.0" />
+    <PackageVersion Include="Microsoft.Extensions.Hosting" Version="10.0.5" />
+    <PackageVersion Include="Microsoft.Extensions.Hosting.Abstractions" Version="10.0.5" />
+    <PackageVersion Include="Microsoft.Extensions.Diagnostics.HealthChecks" Version="10.0.5" />
+    <PackageVersion Include="OpenTelemetry.Api" Version="1.9.0" />
+    <PackageVersion Include="OpenTelemetry.Extensions.Hosting" Version="1.9.0" />
+    <!-- SourceLink -->
+    <PackageVersion Include="Microsoft.SourceLink.GitHub" Version="8.0.0" />
+    <!-- Testing -->
+    <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="17.12.0" />
+    <PackageVersion Include="xunit" Version="2.9.3" />
+    <PackageVersion Include="xunit.runner.visualstudio" Version="2.8.2" />
+    <PackageVersion Include="Moq" Version="4.20.72" />
+    <PackageVersion Include="coverlet.collector" Version="6.0.2" />
+    <PackageVersion Include="Aspire.Hosting.Testing" Version="9.0.0" />
+    <!-- AppHost SDK -->
+    <PackageVersion Include="Aspire.Hosting.AppHost" Version="9.0.0" />
+  </ItemGroup>
+</Project>

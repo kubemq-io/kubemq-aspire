@@ -1,0 +1,66 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{588F66A3-45AA-48D0-8F94-545BD9A2DD32}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KubeMQ.Aspire.Hosting", "src\KubeMQ.Aspire.Hosting\KubeMQ.Aspire.Hosting.csproj", "{6489CEF9-846A-478D-AEC4-5C14F93DF7EC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KubeMQ.Aspire.Client", "src\KubeMQ.Aspire.Client\KubeMQ.Aspire.Client.csproj", "{1310F158-99F1-4D10-B502-362E5A4DC698}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{0754C224-BE51-4842-A1A2-722E1C8EBAE3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KubeMQ.Aspire.Hosting.Tests", "tests\KubeMQ.Aspire.Hosting.Tests\KubeMQ.Aspire.Hosting.Tests.csproj", "{6F377840-BAAA-459C-B523-58A9F89FD5EC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KubeMQ.Aspire.Client.Tests", "tests\KubeMQ.Aspire.Client.Tests\KubeMQ.Aspire.Client.Tests.csproj", "{0DE639C7-E284-45E9-994D-7C6FE933C317}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "samples", "samples", "{FE2866DC-632B-4F18-9A1C-86C341C029DA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KubeMQ.Aspire.Sample.AppHost", "samples\KubeMQ.Aspire.Sample.AppHost\KubeMQ.Aspire.Sample.AppHost.csproj", "{3C18EC1A-5A61-4C90-B499-F3F18E0EA174}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KubeMQ.Aspire.Sample.WebApi", "samples\KubeMQ.Aspire.Sample.WebApi\KubeMQ.Aspire.Sample.WebApi.csproj", "{B903B910-AFD0-4A24-87BC-D97457772339}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6489CEF9-846A-478D-AEC4-5C14F93DF7EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6489CEF9-846A-478D-AEC4-5C14F93DF7EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6489CEF9-846A-478D-AEC4-5C14F93DF7EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6489CEF9-846A-478D-AEC4-5C14F93DF7EC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1310F158-99F1-4D10-B502-362E5A4DC698}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1310F158-99F1-4D10-B502-362E5A4DC698}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1310F158-99F1-4D10-B502-362E5A4DC698}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1310F158-99F1-4D10-B502-362E5A4DC698}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F377840-BAAA-459C-B523-58A9F89FD5EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F377840-BAAA-459C-B523-58A9F89FD5EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F377840-BAAA-459C-B523-58A9F89FD5EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F377840-BAAA-459C-B523-58A9F89FD5EC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0DE639C7-E284-45E9-994D-7C6FE933C317}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0DE639C7-E284-45E9-994D-7C6FE933C317}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0DE639C7-E284-45E9-994D-7C6FE933C317}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0DE639C7-E284-45E9-994D-7C6FE933C317}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C18EC1A-5A61-4C90-B499-F3F18E0EA174}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C18EC1A-5A61-4C90-B499-F3F18E0EA174}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C18EC1A-5A61-4C90-B499-F3F18E0EA174}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C18EC1A-5A61-4C90-B499-F3F18E0EA174}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B903B910-AFD0-4A24-87BC-D97457772339}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B903B910-AFD0-4A24-87BC-D97457772339}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B903B910-AFD0-4A24-87BC-D97457772339}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B903B910-AFD0-4A24-87BC-D97457772339}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{6489CEF9-846A-478D-AEC4-5C14F93DF7EC} = {588F66A3-45AA-48D0-8F94-545BD9A2DD32}
+		{1310F158-99F1-4D10-B502-362E5A4DC698} = {588F66A3-45AA-48D0-8F94-545BD9A2DD32}
+		{6F377840-BAAA-459C-B523-58A9F89FD5EC} = {0754C224-BE51-4842-A1A2-722E1C8EBAE3}
+		{0DE639C7-E284-45E9-994D-7C6FE933C317} = {0754C224-BE51-4842-A1A2-722E1C8EBAE3}
+		{3C18EC1A-5A61-4C90-B499-F3F18E0EA174} = {FE2866DC-632B-4F18-9A1C-86C341C029DA}
+		{B903B910-AFD0-4A24-87BC-D97457772339} = {FE2866DC-632B-4F18-9A1C-86C341C029DA}
+	EndGlobalSection
+EndGlobal
