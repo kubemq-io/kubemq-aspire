@@ -1,0 +1,123 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Aspire.Hosting.AppHost" />
+  </ItemGroup>
+  <!-- Set default so Aspire code-generates Projects.* types for all example references -->
+  <ItemDefinitionGroup>
+    <ProjectReference>
+      <IsAspireProjectResource>true</IsAspireProjectResource>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ProjectReference Include="../../src/KubeMQ.Aspire.Hosting/KubeMQ.Aspire.Hosting.csproj" IsAspireProjectResource="false" />
+    <ProjectReference Include="../ServiceDefaults/KubeMQ.Aspire.Examples.ServiceDefaults.csproj" IsAspireProjectResource="false" />
+  </ItemGroup>
+  <ItemGroup>
+    <!-- PubSub -->
+    <ProjectReference Include="../PubSub/PubSub.BasicPublisher/PubSub.BasicPublisher.csproj" />
+    <ProjectReference Include="../PubSub/PubSub.BasicSubscriber/PubSub.BasicSubscriber.csproj" />
+    <ProjectReference Include="../PubSub/PubSub.WildcardSubscription/PubSub.WildcardSubscription.csproj" />
+    <ProjectReference Include="../PubSub/PubSub.MultipleSubscribers/PubSub.MultipleSubscribers.csproj" />
+    <ProjectReference Include="../PubSub/PubSub.ConsumerGroup/PubSub.ConsumerGroup.csproj" />
+    <ProjectReference Include="../PubSub/PubSub.CancelSubscription/PubSub.CancelSubscription.csproj" />
+    <ProjectReference Include="../PubSub/PubSub.StreamPublish/PubSub.StreamPublish.csproj" />
+    <!-- EventsStore -->
+    <ProjectReference Include="../EventsStore/EventsStore.PersistentPubSub/EventsStore.PersistentPubSub.csproj" />
+    <ProjectReference Include="../EventsStore/EventsStore.StreamPublish/EventsStore.StreamPublish.csproj" />
+    <ProjectReference Include="../EventsStore/EventsStore.StartFromFirst/EventsStore.StartFromFirst.csproj" />
+    <ProjectReference Include="../EventsStore/EventsStore.StartFromLast/EventsStore.StartFromLast.csproj" />
+    <ProjectReference Include="../EventsStore/EventsStore.StartNewOnly/EventsStore.StartNewOnly.csproj" />
+    <ProjectReference Include="../EventsStore/EventsStore.StartAtTime/EventsStore.StartAtTime.csproj" />
+    <ProjectReference Include="../EventsStore/EventsStore.StartAtTimeDelta/EventsStore.StartAtTimeDelta.csproj" />
+    <ProjectReference Include="../EventsStore/EventsStore.ReplayFromSequence/EventsStore.ReplayFromSequence.csproj" />
+    <ProjectReference Include="../EventsStore/EventsStore.ReplayFromTime/EventsStore.ReplayFromTime.csproj" />
+    <ProjectReference Include="../EventsStore/EventsStore.ConsumerGroup/EventsStore.ConsumerGroup.csproj" />
+    <ProjectReference Include="../EventsStore/EventsStore.CancelSubscription/EventsStore.CancelSubscription.csproj" />
+    <!-- Queues -->
+    <ProjectReference Include="../Queues/Queues.SendReceive/Queues.SendReceive.csproj" />
+    <ProjectReference Include="../Queues/Queues.AckReject/Queues.AckReject.csproj" />
+    <ProjectReference Include="../Queues/Queues.Batch/Queues.Batch.csproj" />
+    <ProjectReference Include="../Queues/Queues.DeadLetterQueue/Queues.DeadLetterQueue.csproj" />
+    <ProjectReference Include="../Queues/Queues.DelayedMessages/Queues.DelayedMessages.csproj" />
+    <ProjectReference Include="../Queues/Queues.ExpirationPolicy/Queues.ExpirationPolicy.csproj" />
+    <ProjectReference Include="../Queues/Queues.Peek/Queues.Peek.csproj" />
+    <ProjectReference Include="../Queues/Queues.PollMode/Queues.PollMode.csproj" />
+    <!-- QueuesStream -->
+    <ProjectReference Include="../QueuesStream/StreamSend/QueuesStream.StreamSend.csproj" />
+    <ProjectReference Include="../QueuesStream/StreamReceive/QueuesStream.StreamReceive.csproj" />
+    <ProjectReference Include="../QueuesStream/ReceiverBasic/QueuesStream.ReceiverBasic.csproj" />
+    <ProjectReference Include="../QueuesStream/ReceiverPerMessage/QueuesStream.ReceiverPerMessage.csproj" />
+    <ProjectReference Include="../QueuesStream/ReceiverConcurrentAck/QueuesStream.ReceiverConcurrentAck.csproj" />
+    <ProjectReference Include="../QueuesStream/ReceiverErrorHandling/QueuesStream.ReceiverErrorHandling.csproj" />
+    <ProjectReference Include="../QueuesStream/AutoAck/QueuesStream.AutoAck.csproj" />
+    <ProjectReference Include="../QueuesStream/AckAll/QueuesStream.AckAll.csproj" />
+    <ProjectReference Include="../QueuesStream/NackAll/QueuesStream.NackAll.csproj" />
+    <ProjectReference Include="../QueuesStream/RequeueAll/QueuesStream.RequeueAll.csproj" />
+    <ProjectReference Include="../QueuesStream/DeadLetterPolicy/QueuesStream.DeadLetterPolicy.csproj" />
+    <ProjectReference Include="../QueuesStream/PollMode/QueuesStream.PollMode.csproj" />
+    <!-- Commands -->
+    <ProjectReference Include="../Commands/Commands.SendCommand/Commands.SendCommand.csproj" />
+    <ProjectReference Include="../Commands/Commands.HandleCommand/Commands.HandleCommand.csproj" />
+    <ProjectReference Include="../Commands/Commands.CommandTimeout/Commands.CommandTimeout.csproj" />
+    <ProjectReference Include="../Commands/Commands.ConsumerGroup/Commands.ConsumerGroup.csproj" />
+    <!-- Queries -->
+    <ProjectReference Include="../Queries/Queries.SendQuery/Queries.SendQuery.csproj" />
+    <ProjectReference Include="../Queries/Queries.HandleQuery/Queries.HandleQuery.csproj" />
+    <ProjectReference Include="../Queries/Queries.ConsumerGroup/Queries.ConsumerGroup.csproj" />
+    <ProjectReference Include="../Queries/Queries.CachedResponse/Queries.CachedResponse.csproj" />
+    <!-- Config -->
+    <ProjectReference Include="../Config/Config.BasicConnection/Config.BasicConnection.csproj" />
+    <ProjectReference Include="../Config/Config.AuthToken/Config.AuthToken.csproj" />
+    <ProjectReference Include="../Config/Config.TlsSetup/Config.TlsSetup.csproj" />
+    <ProjectReference Include="../Config/Config.MtlsSetup/Config.MtlsSetup.csproj" />
+    <ProjectReference Include="../Config/Config.CustomTimeouts/Config.CustomTimeouts.csproj" />
+    <ProjectReference Include="../Config/Config.GrpcTuning/Config.GrpcTuning.csproj" />
+    <ProjectReference Include="../Config/Config.KeepaliveSettings/Config.KeepaliveSettings.csproj" />
+    <ProjectReference Include="../Config/Config.ReconnectionPolicy/Config.ReconnectionPolicy.csproj" />
+    <ProjectReference Include="../Config/Config.EnvironmentOverrides/Config.EnvironmentOverrides.csproj" />
+    <ProjectReference Include="../Config/Config.ChannelManagement/Config.ChannelManagement.csproj" />
+    <ProjectReference Include="../Config/Config.PurgeQueue/Config.PurgeQueue.csproj" />
+    <!-- Aspire -->
+    <ProjectReference Include="../Aspire/Aspire.SingleInstance/Aspire.SingleInstance.csproj" />
+    <ProjectReference Include="../Aspire/Aspire.KeyedMultiInstance/Aspire.KeyedMultiInstance.csproj" />
+    <ProjectReference Include="../Aspire/Aspire.HealthChecks/Aspire.HealthChecks.csproj" />
+    <ProjectReference Include="../Aspire/Aspire.OpenTelemetryTracing/Aspire.OpenTelemetryTracing.csproj" />
+    <ProjectReference Include="../Aspire/Aspire.OpenTelemetryMetrics/Aspire.OpenTelemetryMetrics.csproj" />
+    <ProjectReference Include="../Aspire/Aspire.GracefulShutdown/Aspire.GracefulShutdown.csproj" />
+    <ProjectReference Include="../Aspire/Aspire.ContainerProvisioning/Aspire.ContainerProvisioning.csproj" />
+    <ProjectReference Include="../Aspire/Aspire.LicenseKeySecret/Aspire.LicenseKeySecret.csproj" />
+    <ProjectReference Include="../Aspire/Aspire.DataVolume/Aspire.DataVolume.csproj" />
+    <ProjectReference Include="../Aspire/Aspire.CustomImageTag/Aspire.CustomImageTag.csproj" />
+    <!-- Patterns -->
+    <ProjectReference Include="../Patterns/Patterns.FanOut/Patterns.FanOut.csproj" />
+    <ProjectReference Include="../Patterns/Patterns.RequestReply/Patterns.RequestReply.csproj" />
+    <ProjectReference Include="../Patterns/Patterns.WorkQueue/Patterns.WorkQueue.csproj" />
+    <!-- ErrorHandling -->
+    <ProjectReference Include="../ErrorHandling/ErrorHandling.ConnectionError/ErrorHandling.ConnectionError.csproj" />
+    <ProjectReference Include="../ErrorHandling/ErrorHandling.Reconnection/ErrorHandling.Reconnection.csproj" />
+    <ProjectReference Include="../ErrorHandling/ErrorHandling.GracefulShutdown/ErrorHandling.GracefulShutdown.csproj" />
+    <!-- Scenarios: OrderProcessing -->
+    <ProjectReference Include="../Scenarios/Scenarios.OrderProcessing/OrderProcessing.Api/OrderProcessing.Api.csproj" />
+    <ProjectReference Include="../Scenarios/Scenarios.OrderProcessing/OrderProcessing.Processor/OrderProcessing.Processor.csproj" />
+    <ProjectReference Include="../Scenarios/Scenarios.OrderProcessing/OrderProcessing.Notifier/OrderProcessing.Notifier.csproj" />
+    <ProjectReference Include="../Scenarios/Scenarios.OrderProcessing/OrderProcessing.Dashboard/OrderProcessing.Dashboard.csproj" />
+    <!-- Scenarios: RealtimeChat -->
+    <ProjectReference Include="../Scenarios/Scenarios.RealtimeChat/RealtimeChat.Server/RealtimeChat.Server.csproj" />
+    <ProjectReference Include="../Scenarios/Scenarios.RealtimeChat/RealtimeChat.Worker/RealtimeChat.Worker.csproj" />
+    <ProjectReference Include="../Scenarios/Scenarios.RealtimeChat/RealtimeChat.Bot/RealtimeChat.Bot.csproj" />
+    <!-- Scenarios: IoTIngestion -->
+    <ProjectReference Include="../Scenarios/Scenarios.IoTIngestion/IoTIngestion.Gateway/IoTIngestion.Gateway.csproj" />
+    <ProjectReference Include="../Scenarios/Scenarios.IoTIngestion/IoTIngestion.Processor/IoTIngestion.Processor.csproj" />
+    <ProjectReference Include="../Scenarios/Scenarios.IoTIngestion/IoTIngestion.Alerter/IoTIngestion.Alerter.csproj" />
+    <ProjectReference Include="../Scenarios/Scenarios.IoTIngestion/IoTIngestion.Commander/IoTIngestion.Commander.csproj" />
+    <!-- Scenarios: ApiGateway -->
+    <ProjectReference Include="../Scenarios/Scenarios.ApiGateway/ApiGateway.Gateway/ApiGateway.Gateway.csproj" />
+    <ProjectReference Include="../Scenarios/Scenarios.ApiGateway/ApiGateway.UserService/ApiGateway.UserService.csproj" />
+    <ProjectReference Include="../Scenarios/Scenarios.ApiGateway/ApiGateway.ProductService/ApiGateway.ProductService.csproj" />
+    <ProjectReference Include="../Scenarios/Scenarios.ApiGateway/ApiGateway.AuditService/ApiGateway.AuditService.csproj" />
+  </ItemGroup>
+</Project>
