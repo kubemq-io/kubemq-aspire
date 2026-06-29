@@ -52,3 +52,7 @@ CodeCoverage/
 *.VisualState.xml
 TestResult.xml
 nunit-*.xml
+# Cleanup: IDE/build artifacts
+.idea/
+test-results/
+node_modules/
