@@ -1,7 +1,7 @@
 // KubeMQ Aspire — Aspire: Custom Image Tag
 //
 // Worker that connects to a KubeMQ instance pinned to a specific version.
-// The version is set in AppHost: .WithImageTag("2.5.2")
+// The version is set in AppHost: .WithImageTag("v2.10.0")
 
 using KubeMQ.Sdk.Client;
 

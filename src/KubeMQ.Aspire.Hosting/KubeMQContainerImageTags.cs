@@ -2,7 +2,7 @@ namespace KubeMQ.Aspire.Hosting;
 
 internal static class KubeMQContainerImageTags
 {
-    public const string Registry = "docker.io";
-    public const string Image = "kubemq/kubemq";
-    public const string Tag = "2.5.0";
+    public const string Registry = "europe-docker.pkg.dev";
+    public const string Image = "kubemq/images/kubemq";
+    public const string Tag = "v2.10.1";
 }

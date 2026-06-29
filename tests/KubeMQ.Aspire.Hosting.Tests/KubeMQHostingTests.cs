@@ -29,9 +29,9 @@ public sealed class KubeMQHostingTests
             .OfType<ContainerImageAnnotation>()
             .Single();
 
-        Assert.Equal("kubemq/kubemq", imageAnnotation.Image);
-        Assert.Equal("docker.io", imageAnnotation.Registry);
-        Assert.Equal("2.5.0", imageAnnotation.Tag);
+        Assert.Equal("kubemq/images/kubemq", imageAnnotation.Image);
+        Assert.Equal("europe-docker.pkg.dev", imageAnnotation.Registry);
+        Assert.Equal("v2.10.1", imageAnnotation.Tag);
     }
 
     [Fact]
@@ -133,15 +133,15 @@ public sealed class KubeMQHostingTests
         var builder = CreateBuilder();
 
         var kubemq = builder.AddKubeMQ("messaging");
-        kubemq.WithImageTag("2.5.0");
+        kubemq.WithImageTag("v2.9.9");
 
         var imageAnnotations = kubemq.Resource.Annotations
             .OfType<ContainerImageAnnotation>()
             .ToList();
 
         var latest = imageAnnotations.Last();
-        Assert.Equal("kubemq/kubemq", latest.Image);
-        Assert.Equal("2.5.0", latest.Tag);
+        Assert.Equal("kubemq/images/kubemq", latest.Image);
+        Assert.Equal("v2.9.9", latest.Tag);
     }
 
     [Fact]
@@ -245,6 +245,76 @@ public sealed class KubeMQHostingTests
             () => kubemq.WithImageTag(""));
         Assert.Throws<ArgumentException>(
             () => kubemq.WithImageTag("   "));
+    }
+
+    [Fact]
+    public void WithImageRegistry_OverridesRegistry_PreservesDefaultImageAndTag()
+    {
+        var builder = CreateBuilder();
+
+        var kubemq = builder.AddKubeMQ("messaging");
+        kubemq.WithImageRegistry("my-registry.example.com");
+
+        var image = kubemq.Resource.Annotations
+            .OfType<ContainerImageAnnotation>()
+            .Last();
+
+        Assert.Equal("my-registry.example.com", image.Registry);
+        Assert.Equal("kubemq/images/kubemq", image.Image);
+        Assert.Equal("v2.10.1", image.Tag);
+    }
+
+    [Fact]
+    public void WithImageRegistry_OverridesImageAndTag()
+    {
+        var builder = CreateBuilder();
+
+        var kubemq = builder.AddKubeMQ("messaging");
+        kubemq.WithImageRegistry("my-registry.example.com", image: "mirror/kubemq", tag: "v2.9.9");
+
+        var image = kubemq.Resource.Annotations
+            .OfType<ContainerImageAnnotation>()
+            .Last();
+
+        Assert.Equal("my-registry.example.com", image.Registry);
+        Assert.Equal("mirror/kubemq", image.Image);
+        Assert.Equal("v2.9.9", image.Tag);
+    }
+
+    [Fact]
+    public void WithImageRegistry_PreservesPriorImageTag()
+    {
+        var builder = CreateBuilder();
+
+        var kubemq = builder.AddKubeMQ("messaging");
+        kubemq.WithImageTag("v2.9.9").WithImageRegistry("my-registry.example.com");
+
+        var image = kubemq.Resource.Annotations
+            .OfType<ContainerImageAnnotation>()
+            .Last();
+
+        Assert.Equal("my-registry.example.com", image.Registry);
+        Assert.Equal("v2.9.9", image.Tag);
+    }
+
+    [Fact]
+    public void WithImageRegistry_NullBuilder_Throws()
+    {
+        Assert.Throws<ArgumentNullException>(
+            () => KubeMQHostingExtensions.WithImageRegistry(null!, "my-registry.example.com"));
+    }
+
+    [Fact]
+    public void WithImageRegistry_EmptyRegistry_Throws()
+    {
+        var builder = CreateBuilder();
+        var kubemq = builder.AddKubeMQ("messaging");
+        // Call via the static form so the KubeMQ overload (which validates) is invoked
+        // rather than the framework's single-arg WithImageRegistry, which does not.
+        Assert.Throws<ArgumentException>(
+            () => KubeMQHostingExtensions.WithImageRegistry(kubemq, ""));
+        Assert.Throws<ArgumentException>(
+            () => KubeMQHostingExtensions.WithImageRegistry(kubemq, "   "));
     }
 
     // --- Phase 1: M-11 WithDataVolume empty string ---
