@@ -75,10 +75,10 @@ public class OrderService([FromKeyedServices("orders")] IKubeMQClient client) { 
 
 | Method | Description |
 |--------|-------------|
-| `AddKubeMQ(name, grpcPort?)` | Add a KubeMQ container resource (pulls `europe-docker.pkg.dev/kubemq/images/kubemq:v2.10.1` by default) |
+| `AddKubeMQ(name, grpcPort?)` | Add a KubeMQ container resource (pulls `europe-docker.pkg.dev/kubemq/images/kubemq-next:latest` by default) |
 | `WithLicenseKey(key)` | Set the `KUBEMQ_TOKEN` environment variable |
 | `WithDataVolume(name?)` | Bind a persistent volume to `/store` |
-| `WithImageTag(tag)` | Override the image tag (default: `v2.10.1`) |
+| `WithImageTag(tag)` | Override the image tag (default: `latest`) |
 | `WithImageRegistry(registry, image?, tag?)` | Repoint the pull to a private/air-gapped registry (and optionally override image path and tag) |
 
 ### Endpoints
