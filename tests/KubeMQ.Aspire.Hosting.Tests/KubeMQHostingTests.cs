@@ -29,9 +29,9 @@ public sealed class KubeMQHostingTests
             .OfType<ContainerImageAnnotation>()
             .Single();
 
-        Assert.Equal("kubemq/images/kubemq", imageAnnotation.Image);
+        Assert.Equal("kubemq/images/kubemq-next", imageAnnotation.Image);
         Assert.Equal("europe-docker.pkg.dev", imageAnnotation.Registry);
-        Assert.Equal("v2.10.1", imageAnnotation.Tag);
+        Assert.Equal("latest", imageAnnotation.Tag);
     }
 
     [Fact]
@@ -140,7 +140,7 @@ public sealed class KubeMQHostingTests
             .ToList();
 
         var latest = imageAnnotations.Last();
-        Assert.Equal("kubemq/images/kubemq", latest.Image);
+        Assert.Equal("kubemq/images/kubemq-next", latest.Image);
         Assert.Equal("v2.9.9", latest.Tag);
     }
 
@@ -260,8 +260,8 @@ public sealed class KubeMQHostingTests
             .Last();
 
         Assert.Equal("my-registry.example.com", image.Registry);
-        Assert.Equal("kubemq/images/kubemq", image.Image);
-        Assert.Equal("v2.10.1", image.Tag);
+        Assert.Equal("kubemq/images/kubemq-next", image.Image);
+        Assert.Equal("latest", image.Tag);
     }
 
     [Fact]
