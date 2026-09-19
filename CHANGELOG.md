@@ -9,10 +9,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- Default KubeMQ container image now pulls from the canonical GCP Artifact Registry
-  (`europe-docker.pkg.dev/kubemq/images/kubemq`) instead of Docker Hub (`docker.io/kubemq/kubemq`),
-  aligning `AddKubeMQ()` with the rest of the KubeMQ product and docs
-- Default image tag bumped from the stale `2.5.0` to `v2.10.1` (the current published server release)
+- **Default server is now KubeMQ next v1.0.0.** `AddKubeMQ()` pulls
+  `europe-docker.pkg.dev/kubemq/images/kubemq-next:v1.0.0` (Google Artifact Registry, no login needed)
+  instead of the legacy v2 image on Docker Hub. The tag is pinned, not `latest`, so an app's server
+  version only changes when this package does. This moves existing users from the legacy v2 server to
+  the next line — pin the old image with `WithImageRegistry(...)` / `WithImageTag(...)` to stay on v2.
+  The server still requires a license key (`WithLicenseKey(...)`), as the legacy image did.
 
 ### Added
 

@@ -31,7 +31,7 @@ public sealed class KubeMQHostingTests
 
         Assert.Equal("kubemq/images/kubemq-next", imageAnnotation.Image);
         Assert.Equal("europe-docker.pkg.dev", imageAnnotation.Registry);
-        Assert.Equal("latest", imageAnnotation.Tag);
+        Assert.Equal("v1.0.0", imageAnnotation.Tag);
     }
 
     [Fact]
@@ -261,7 +261,7 @@ public sealed class KubeMQHostingTests
 
         Assert.Equal("my-registry.example.com", image.Registry);
         Assert.Equal("kubemq/images/kubemq-next", image.Image);
-        Assert.Equal("latest", image.Tag);
+        Assert.Equal("v1.0.0", image.Tag);
     }
 
     [Fact]
