@@ -4,5 +4,5 @@ internal static class KubeMQContainerImageTags
 {
     public const string Registry = "europe-docker.pkg.dev";
     public const string Image = "kubemq/images/kubemq-next";
-    public const string Tag = "latest";
+    public const string Tag = "v1.0.0";
 }
